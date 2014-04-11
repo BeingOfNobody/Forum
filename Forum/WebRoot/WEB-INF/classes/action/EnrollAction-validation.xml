@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="user.userName">
+		<field-validator type="required">
+		  	<message>用户名不能为null！</message>
+		</field-validator>
+		<field-validator type="requiredstring">
+		  	<message>用户名不能为空！</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{6,16})]]></param>
+		  	<message>用户名请使用6-16位英字母或数字！</message>
+		</field-validator>		
+	</field>
+	<field name="user.userPassword">
+		<field-validator type="required">
+		  	<message>密码不能为null！</message>
+		</field-validator>
+		<field-validator type="requiredstring">
+		  	<message>密码不能为空！</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{6,12})]]></param>
+			<message>密码请使用6-12位英字母和或数字！</message>
+		</field-validator>		
+	</field>
+	<field name="user.userNickname">
+		<field-validator type="required">
+			<message>昵称不能为null！</message>
+		</field-validator>
+		<field-validator type="requiredstring">
+			<message>昵称不能为空！</message>
+		</field-validator>
+	</field>
+	<field name="user.userEmail">
+		<field-validator type="required">
+			<message>邮箱不能为null！</message>
+		</field-validator>
+		<field-validator type="requiredstring">
+			<message>邮箱不能为空！</message>
+		</field-validator>
+		<field-validator type="email">
+			<message>邮箱格式有误！</message>
+		</field-validator>
+	</field>
+	<field name="user.userBirthday">
+		<field-validator type="required">
+			<message>生日不能为空！</message>
+		</field-validator>
+		<field-validator type="date">
+			<param name="max">2009-01-01</param>
+			<param name="min">1909-01-01</param>
+			<message>生日不符合规范！</message>
+		</field-validator>
+	</field>
+</validators>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="user.userNickname">
+		<field-validator type="requiredstring">
+			<message>昵称不能为空！</message>
+		</field-validator>
+	</field>
+	<field name="user.userBirthday">
+		<field-validator type="required">
+			<message>生日不能为空！</message>
+		</field-validator>		
+		<field-validator type="date">
+			<param name="min">1900-01-01</param>
+			<param name="max">2009-01-01</param>
+			<message>生日不符合规范！</message>
+		</field-validator>
+	</field>
+	<field name="user.userEmail">
+		<field-validator type="email">
+			<message>邮箱不符合规范！</message>
+		</field-validator>
+	</field>
+	<field name="user.userRemark">
+		<field-validator type="stringlength">
+			<param name="maxLength">100</param>
+			<message>简介不能超过100个字符！</message>
+		</field-validator>
+	</field>
+</validators>

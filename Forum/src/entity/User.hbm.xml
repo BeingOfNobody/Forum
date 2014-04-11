@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="entity.User" table="user" catalog="forum">
+        <id name="userId" type="java.lang.Integer">
+            <column name="userId" />
+            <generator class="native" />
+        </id>
+        <property name="userName" type="java.lang.String">
+            <column name="userName" length="16" not-null="true" />
+        </property>
+        <property name="userPassword" type="java.lang.String">
+            <column name="userPassword" length="12" not-null="true" />
+        </property>
+        <property name="userEmail" type="java.lang.String">
+            <column name="userEmail" length="100" not-null="true" />
+        </property>
+        <property name="userNickname" type="java.lang.String">
+            <column name="userNickname" length="20" not-null="true" />
+        </property>
+        <property name="userBirthday" type="java.sql.Timestamp">
+            <column name="userBirthday" length="19" not-null="true" />
+        </property>
+        <property name="sex" type="java.lang.Integer">
+            <column name="sex" not-null="true" />
+        </property>
+        <property name="userPoints" type="java.lang.Integer">
+            <column name="userPoints" not-null="true" />
+        </property>
+        <property name="userRemark" type="java.lang.String">
+            <column name="userRemark" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

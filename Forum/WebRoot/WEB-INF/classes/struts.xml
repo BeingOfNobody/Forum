@@ -1,0 +1,88 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="gb2312"/>
+	
+	<package name="default" extends="struts-default">
+		<interceptors>
+			<interceptor name="loginCheck" class="interceptor.LoginCheck"></interceptor>
+			<interceptor name="managerLoginCheck" class="interceptor.ManagerLoginCheck"></interceptor>
+		</interceptors>
+		<global-results>
+			<result name="error" type="redirect">/error.html</result>
+		</global-results>
+		<action name="allPostAction" class="action.AllPostAction">
+			<result name="success">/allPost.jsp</result>
+		</action>
+		<action name="addPostAction" class="action.AddPostAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="input">/newPost.jsp</result>
+			<result name="fail">/newPost.jsp</result>
+			<result name="success" type="redirect">/newPost.jsp</result>
+		</action>
+		<action name="deletePostAction" class="action.DeletePostAction">
+			<interceptor-ref name="managerLoginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="redirect">/action/allPostAction.action?pageNumber=${pageNumber}</result>
+		</action>
+		<action name="deleteMyPostAction" class="action.DeleteMyPostAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="redirect">/action/personalPostAction.action?pageNumber=${pageNumber}</result>
+		</action>
+		<action name="loginAction" class="action.LoginAction">
+			<result name="input">/login.jsp</result>
+			<result name="success" type="redirect">/action/allPostAction.action</result>
+		</action>
+		<action name="managerLoginAction" class="action.ManagerLoginAction">
+			<result name="input">/managerLogin.jsp</result>
+			<result name="success" type="redirect">/action/allPostAction.action</result>
+		</action>
+		<action name="enrollAction" class="action.EnrollAction">
+			<result name="input">/enroll.jsp</result>
+			<result name="success">/login.jsp</result>
+		</action>
+		<action name="postMatterAction" class="action.PostMatterAction">
+			<result name="success">/postMatter.jsp</result>
+		</action>
+		<action name="personalInformationAction" class="action.PersonalInformationAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>		
+			<result name="fail" type="redirect">/action/allPostAction.action</result>
+			<result name="success" type="redirect">/myInformation.jsp</result>
+		</action>
+		<action name="userInformationAction" class="action.UserInformationAction">
+			<result name="success">/userInformation.jsp</result>
+		</action>
+		<action name="personalManageAction" class="action.PersonalManageAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>		
+			<result name="fail" type="redirect">/action/allPostAction.action</result>
+			<result name="input">/myInformation.jsp</result>
+			<result name="success" type="redirect">/action/personalInformationAction.action</result>
+		</action>
+		<action name="updatePasswordAction" class="action.UpdatePasswordAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>		
+			<result name="fail" type="redirect">/action/allPostAction.action</result>
+			<result name="input">/updatePassword.jsp</result>
+			<result name="success" type="redirect">/action/personalInformationAction.action</result>
+		</action>
+		<action name="personalPostAction" class="action.PersonalPostAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>		
+			<result name="fail" type="redirect">/action/allPostAction.action</result>
+			<result name="success">/myPost.jsp</result>
+		</action>
+		<action name="userExitAction" class="action.ExitAction" method="userExit">
+			<result name="success" type="redirect">/action/allPostAction.action</result>
+		</action>
+		<action name="managerExitAction" class="action.ExitAction" method="managerExit">
+			<result name="success" type="redirect">/action/allPostAction.action</result>
+		</action>
+	</package>
+</struts>
+
+

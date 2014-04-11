@@ -1,0 +1,107 @@
+/**全局设置*/
+*{
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px;
+}
+li{
+	list-style: none;
+}
+img{
+	border: 0px;
+}
+body{
+	background-image: url("../image/bg.jpg");
+}
+
+/**非全局设置*/
+#wholePage{
+	width: 900px;
+	height: 440px;
+}
+#top{
+	width: 900px;
+	height: 140px;
+}
+#bottom{
+	width: 900px;
+}
+#currentPoint{
+	width: 900px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: left;
+	padding-left: 50px;
+}
+ul.singlePost{
+	width: 652px;
+	border: 1px solid rgb(247,233,180);
+}
+ul.singlePost li{
+	border: 1px solid rgb(170,170,255);	
+	padding-top: 2px;
+	padding-bottom: 2px;	
+	float: left;
+}
+li.postPaging{
+	width: 650px;
+}
+li.sequence{
+	width: 50px;
+	background-color: rgb(247,233,180);
+}
+li.topic{
+	width: 250px;
+	text-align: left;
+	padding-left: 10px;
+}
+li.author{
+	width: 150px;
+}
+li.date{
+	width: 150px;
+}
+li.delete{
+	width: 50px;
+}
+a.green:LINK,a.green:VISITED {
+	color:green;
+	text-decoration: none;
+}
+a.green:HOVER,a.green:ACTIVE {
+	color:olive;
+	text-decoration: underline;
+}
+a.maroon:LINK,a.maroon:VISITED {
+	color:maroon;
+	text-decoration: none;
+}
+a.maroon:HOVER,a.maroon:ACTIVE {
+	color:olive;
+	text-decoration: underline;
+}
+a.blue:LINK,a.blue:VISITED {
+	color:blue;
+	text-decoration: none;
+}
+a.blue:HOVER,a.blue:ACTIVE {
+	color:olive;
+	text-decoration: underline;
+}
+ul.postMatter{
+	width: 502px;
+	text-align: left;
+}
+ul.postMatter li{
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}
+li.postAuthor{
+	width: 150px;
+	float: left;
+}
+li.authorPoints{
+	width: 350px;
+	float: left;
+}
